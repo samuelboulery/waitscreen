@@ -129,9 +129,6 @@ export default function DVDScreensaver() {
                 lastBounceTimeRef.current = performance.now();
             }
 
-            // Centre du logo
-            const cx = x + LOGO_WIDTH / 2;
-            const cy = y + LOGO_HEIGHT / 2;
 
             // Coins de la zone
             const corners = [
@@ -242,7 +239,7 @@ export default function DVDScreensaver() {
         return () => {
             if (rafRef.current) cancelAnimationFrame(rafRef.current);
         };
-    }, [containerSize.width, containerSize.height, debug]); // dépendances minimales
+    }, [containerSize.width, containerSize.height, debug, debugLines.length]);
 
     return (
         <div
